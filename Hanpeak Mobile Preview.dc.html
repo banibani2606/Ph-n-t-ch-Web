@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#e7edf3;font-family:'Be Vietnam Pro',system-ui,sans-serif;color:#334155}
+*{box-sizing:border-box}
+a{color:#059669;text-decoration:none}
+a:hover{color:#047857}
+</style>
+</helmet>
+
+<div style="min-height:100vh;padding:40px 32px 64px;display:flex;flex-direction:column;align-items:center;gap:28px">
+
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#059669">RESPONSIVE PREVIEW</div>
+    <div style="font-size:27px;font-weight:800;letter-spacing:-.025em;color:#0f172a">Hanpeak Landing · 3 phiên bản</div>
+    <div style="font-size:14.5px;line-height:1.6;color:#64748b;max-width:560px">Mỗi khung là trang thật, cuộn được độc lập. Bấm để xem một thiết bị ở tỉ lệ 1:1.</div>
+  </div>
+
+  <div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap;justify-content:center">
+    <button onClick="{{ mAll }}" style="border:1px solid {{ bAll }};background:{{ gAll }};color:{{ fAll }};cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:9px 20px;border-radius:9999px">Cả 3</button>
+    <button onClick="{{ mDesk }}" style="border:1px solid {{ bDesk }};background:{{ gDesk }};color:{{ fDesk }};cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:9px 20px;border-radius:9999px">Máy tính · 1440</button>
+    <button onClick="{{ mTab }}" style="border:1px solid {{ bTab }};background:{{ gTab }};color:{{ fTab }};cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:9px 20px;border-radius:9999px">Tablet · 768</button>
+    <button onClick="{{ mPhone }}" style="border:1px solid {{ bPhone }};background:{{ gPhone }};color:{{ fPhone }};cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:9px 20px;border-radius:9999px">Điện thoại · 390</button>
+  </div>
+
+  <div style="display:flex;gap:44px;align-items:flex-start;justify-content:center;flex-wrap:wrap">
+
+    <div style="display:{{ showDesk }};flex-direction:column;align-items:center;gap:14px">
+      <div style="width:{{ deskBoxW }};height:{{ deskBoxH }}">
+        <div style="width:1440px;height:900px;transform:scale({{ deskS }});transform-origin:top left;border-radius:14px;overflow:hidden;background:#f8fafc;box-shadow:0 30px 60px -30px rgba(15,23,42,.55),0 0 0 1px rgba(15,23,42,.12)">
+          <div style="height:34px;display:flex;align-items:center;gap:8px;padding:0 16px;background:#e2e8f0;border-bottom:1px solid #cbd5e1">
+            <div style="width:11px;height:11px;border-radius:9999px;background:#f87171"></div>
+            <div style="width:11px;height:11px;border-radius:9999px;background:#fbbf24"></div>
+            <div style="width:11px;height:11px;border-radius:9999px;background:#34d399"></div>
+            <div style="margin-left:14px;flex:1;height:20px;border-radius:9999px;background:#f8fafc;display:flex;align-items:center;padding:0 12px;font-size:11px;color:#94a3b8">hanpeak.vn</div>
+          </div>
+          <iframe src="Hanpeak Landing.dc.html" title="Desktop" style="width:100%;height:866px;border:none;display:block"></iframe>
+        </div>
+      </div>
+      <div style="font-size:12.5px;font-weight:700;letter-spacing:.1em;color:#64748b">MÁY TÍNH · 1440</div>
+    </div>
+
+    <div style="display:{{ showTab }};flex-direction:column;align-items:center;gap:14px">
+      <div style="width:{{ tabBoxW }};height:{{ tabBoxH }}">
+        <div style="width:812px;height:1080px;transform:scale({{ tabS }});transform-origin:top left;padding:22px;border-radius:36px;background:#0f172a;box-shadow:0 30px 60px -30px rgba(15,23,42,.6)">
+          <div style="width:768px;height:1036px;border-radius:18px;overflow:hidden;background:#f8fafc">
+            <iframe src="Hanpeak Landing.dc.html" title="Tablet" style="width:100%;height:100%;border:none;display:block"></iframe>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:12.5px;font-weight:700;letter-spacing:.1em;color:#64748b">TABLET · 768</div>
+    </div>
+
+    <div style="display:{{ showPhone }};flex-direction:column;align-items:center;gap:14px">
+      <div style="width:{{ phoneBoxW }};height:{{ phoneBoxH }}">
+        <div style="position:relative;width:418px;height:872px;transform:scale({{ phoneS }});transform-origin:top left;padding:14px;border-radius:54px;background:#0f172a;box-shadow:0 30px 60px -30px rgba(15,23,42,.6)">
+          <div style="position:absolute;top:22px;left:50%;transform:translateX(-50%);width:96px;height:22px;border-radius:9999px;background:#0f172a;z-index:3"></div>
+          <div style="width:390px;height:844px;border-radius:42px;overflow:hidden;background:#f8fafc">
+            <iframe src="Hanpeak Landing.dc.html" title="Điện thoại" style="width:100%;height:100%;border:none;display:block"></iframe>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:12.5px;font-weight:700;letter-spacing:.1em;color:#64748b">ĐIỆN THOẠI · 390</div>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { mode: 'all' };
+  renderVals() {
+    const m = this.state.mode;
+    const pill = (v) => v === m
+      ? { g: '#10b981', f: '#ffffff', b: '#10b981' }
+      : { g: '#ffffff', f: '#475569', b: '#cbd5e1' };
+    const a = pill('all'), d = pill('desk'), t = pill('tab'), p = pill('phone');
+
+    // scale per mode: side-by-side shrinks, solo is 1:1 (tablet/phone) or fit (desktop)
+    const deskS = m === 'all' ? 0.42 : 0.78;
+    const tabS = m === 'all' ? 0.42 : 0.78;
+    const phoneS = m === 'all' ? 0.62 : 1;
+    const box = (w, h, s) => ({ w: Math.round(w * s) + 'px', h: Math.round(h * s) + 'px' });
+    const bd = box(1440, 900, deskS), bt = box(812, 1080, tabS), bp = box(418, 872, phoneS);
+
+    return {
+      showDesk: m === 'all' || m === 'desk' ? 'flex' : 'none',
+      showTab: m === 'all' || m === 'tab' ? 'flex' : 'none',
+      showPhone: m === 'all' || m === 'phone' ? 'flex' : 'none',
+      deskS, tabS, phoneS,
+      deskBoxW: bd.w, deskBoxH: bd.h,
+      tabBoxW: bt.w, tabBoxH: bt.h,
+      phoneBoxW: bp.w, phoneBoxH: bp.h,
+      gAll: a.g, fAll: a.f, bAll: a.b,
+      gDesk: d.g, fDesk: d.f, bDesk: d.b,
+      gTab: t.g, fTab: t.f, bTab: t.b,
+      gPhone: p.g, fPhone: p.f, bPhone: p.b,
+      mAll: () => this.setState({ mode: 'all' }),
+      mDesk: () => this.setState({ mode: 'desk' }),
+      mTab: () => this.setState({ mode: 'tab' }),
+      mPhone: () => this.setState({ mode: 'phone' })
+    };
+  }
+}
+
+</script>
+</body>
+</html>

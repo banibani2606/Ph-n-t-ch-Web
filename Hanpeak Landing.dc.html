@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<template id="__bundler_thumbnail"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#ecfdf5"/><g transform="translate(600 400)"><circle r="200" fill="#10b981" opacity=".12"/><text x="0" y="46" text-anchor="middle" font-family="serif" font-size="200" font-weight="700" fill="#059669">汉</text></g><text x="600" y="700" text-anchor="middle" font-family="system-ui, sans-serif" font-size="64" font-weight="800" fill="#0f172a">Hanpeak</text></svg></template>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Ma+Shan+Zheng&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f8fafc;font-family:'Be Vietnam Pro',system-ui,sans-serif;color:#334155;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#059669;text-decoration:none}
+a:hover{color:#047857}
+@keyframes hp-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes hp-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes hp-pulse{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:.7;transform:scale(1.06)}}
+@media (min-width:1360px){
+[data-m="steptitle"]{min-height:34px}
+}
+@media (min-width:1081px){
+[data-m="ftitle"]{padding-left:170px;padding-right:170px}
+}
+@media (max-width:1080px){
+#van-de [data-m~="g3"]{grid-template-columns:1fr 1fr!important}
+#van-de [data-m="pctitle"]{font-size:22px!important;white-space:nowrap!important}
+#van-de [data-m~="pcard"] div[style*="border-radius:50%"]{width:60px!important;height:60px!important;font-size:28px!important}
+}
+@media (max-width:640px){
+#van-de [data-m~="g3"]{grid-template-columns:1fr!important}
+}
+@media (min-width:641px) and (max-width:980px){
+[data-m="fg"]{grid-template-columns:1fr 1fr!important;gap:36px!important}
+[data-m="fg"]>div:nth-child(1){grid-column:1 / -1}
+[data-m~="g3"][data-m~="doi"]{grid-template-columns:1fr!important;gap:22px!important}
+[data-m~="doi"]>div{display:grid!important;grid-template-columns:1fr minmax(210px,34%)!important;column-gap:26px!important;row-gap:8px!important;align-items:center!important}
+[data-m~="doi"]>div>div:nth-child(1){grid-column:2;grid-row:1 / span 3;align-self:center}
+[data-m~="doi"]>div>[data-m="personatitle"]{grid-column:1;grid-row:1;margin-top:0!important;text-align:left!important;align-self:end}
+[data-m~="doi"]>div>[data-m="personabody"]{grid-column:1;grid-row:2;text-align:left!important}
+[data-m~="doi"]>div>a{grid-column:1;grid-row:3;justify-self:start;margin-top:6px!important}
+}
+@media (max-width:860px){
+[data-m="personatitle"]{font-size:20px!important}
+[data-m="personabody"]{font-size:18px!important}
+}
+@media (max-width:860px){
+html,body,[data-m="tabs"],[data-m~="panel"] *{scrollbar-width:none!important;-ms-overflow-style:none!important}
+html::-webkit-scrollbar,body::-webkit-scrollbar,[data-m="tabs"]::-webkit-scrollbar,*::-webkit-scrollbar{width:0!important;height:0!important;display:none!important}
+[data-m="nav"]{flex:0 1 auto!important;order:0!important;flex-wrap:nowrap!important;justify-content:center!important;overflow:visible!important;gap:14px!important;padding-top:0!important}
+[data-m="nav"] a{font-size:13px!important}
+[data-m="logo"]{height:30px!important}
+[data-m="wordmark"]{font-size:15px!important}
+[data-m="navcta"]{font-size:12.5px!important;padding:8px 16px!important}
+[data-m="hero"]{padding:52px 20px 92px!important}
+[data-m="h1"]{font-size:34px!important;letter-spacing:-.02em!important}
+[data-m="lead"]{font-size:17px!important;line-height:1.55!important}
+[data-m="cta"]{font-size:15px!important;padding:15px 22px!important;margin-top:14px!important;width:auto!important;max-width:100%!important;white-space:nowrap!important}
+[data-m="deco"]{font-size:170px!important}
+[data-m="sec"]{padding:64px 20px!important}
+[data-m="h2"]{font-size:27px!important;width:auto!important;max-width:none!important;letter-spacing:-.02em!important}
+[data-m~="g3"],[data-m~="g4"],[data-m~="fg"]{grid-template-columns:1fr!important;gap:16px!important}
+[data-m~="g3"]>div{min-height:0!important;padding:26px 22px!important}
+[data-m~="doi"]>div{min-height:0!important;padding:18px 20px 26px!important}
+[data-m~="g3"] [data-m="pctitle"]{font-size:22px!important}
+[data-m="prog"]{display:none!important}
+[data-m~="g4"]{row-gap:26px!important}
+[data-m~="step"]{position:relative;display:grid!important;grid-template-columns:48px 1fr!important;column-gap:14px!important;row-gap:4px!important}
+[data-m~="step"]::before{content:"";position:absolute;left:21px;top:52px;bottom:-28px;width:2px;background:linear-gradient(180deg,#10b981,#d1fae5);z-index:0}
+[data-m~="g4"]>[data-m~="step"]:last-child::before{display:none!important}
+[data-m~="step"]>[data-m="circ"]{position:relative;z-index:1;grid-column:1;grid-row:1;align-self:start}
+[data-m~="step"]>[data-m="stxt"]{grid-column:2;grid-row:1}
+[data-m="steptitle"]{min-height:0!important;font-size:19px!important}
+[data-m="gv"]{grid-template-columns:repeat(2,1fr)!important}
+[data-m="pbar"]{width:96px!important}
+[data-m~="panel"]{padding:36px 24px 40px!important}
+#danh-gia{padding:64px 0!important}
+[data-m="fade"]{width:56px!important}
+[data-m="revhead"]{padding:0 20px!important}
+[data-m="tcard"]{width:272px!important;height:auto!important;min-height:330px!important;padding:22px 22px 20px!important}
+[data-m="cta2"]{padding:80px 20px!important}
+[data-m="h2big"]{font-size:32px!important;letter-spacing:-.02em!important}
+@media (max-width:520px){
+[data-m="cta"]{font-size:13px!important;padding:14px 18px!important}
+}
+[data-m="foot"]{padding:52px 20px 32px!important}
+}
+@media (max-width:980px){
+#van-de [data-m~="g3"]{gap:14px!important}
+div[data-m="pcard"]{display:flex!important;flex-direction:column!important;gap:14px!important;padding:22px 22px 24px!important;border-radius:16px!important}
+[data-m="pcard"]>div:nth-child(1){align-items:center!important;gap:14px!important}
+[data-m="pcard"]>div:nth-child(1)>div:nth-child(1){width:52px!important;height:52px!important;font-size:24px!important}
+#van-de [data-m="pcard"] [data-m="pctitle"]{font-size:19px!important;min-height:0!important;white-space:nowrap!important}
+[data-m="pcard"]>div:nth-child(2){font-size:15.5px!important;line-height:1.6!important}
+}
+@media (max-width:640px){
+div[data-m="pcard"]{padding:20px 18px!important;gap:12px!important}
+[data-m="pcard"]>div:nth-child(1)>div:nth-child(1){width:46px!important;height:46px!important;font-size:21px!important}
+#van-de [data-m="pcard"] [data-m="pctitle"]{font-size:18px!important;line-height:1.3!important;white-space:nowrap!important}
+[data-m="pcard"]>div:nth-child(2){font-size:15px!important}
+}
+@media (max-width:640px){
+[data-m="nav"]{display:none!important}
+[data-m="herobg"]{background-position:62% bottom!important;background-size:auto 58%!important}
+[data-m="tabs"],[data-m="arrow"]{display:none!important}
+[data-m~="g2"]{grid-template-columns:1fr!important;gap:16px!important}
+[data-m~="panel"]{display:flex!important;padding:28px 18px!important;gap:14px!important}
+[data-m="fcard"]{display:flex!important;flex-direction:column!important}
+[data-m="fcard"]>div:nth-child(1){order:4}
+[data-m="fcard"]>div:nth-child(2){order:3}
+[data-m="fcard"]>div:nth-child(3){order:2}
+[data-m="fcard"]>div:nth-child(4){order:1;border-top:none!important}
+[data-m~="panel"]{border-top:1px solid #e2e8f0}
+[data-m~="panel"]>div:nth-child(2){display:none!important}
+[data-m="ftitle"]{font-size:20px!important;line-height:1.3!important;white-space:nowrap!important;letter-spacing:-.03em!important}
+[data-m~="panel"] div[style*="font-size:17px;line-height:1.7"]{font-size:15.5px!important;line-height:1.65!important}
+[data-m="soon"]{position:static!important;align-self:flex-end!important;font-size:10px!important;letter-spacing:.04em!important;padding:3px 9px!important;gap:5px!important}
+}
+@media (min-width:641px) and (max-width:1080px){
+[data-m="soon"]{top:14px!important;right:14px!important;font-size:9.5px!important;letter-spacing:.06em!important;padding:3px 8px!important;gap:5px!important}
+[data-m="soon"]>span{width:5px!important;height:5px!important}
+[data-m="ftitle"]{font-size:24px!important;margin-top:22px!important}
+}
+@media (max-width:640px){
+[data-m~="g3"][data-m~="doi"]{grid-template-columns:1fr!important;gap:22px!important}
+[data-m~="doi"]>div{display:grid!important;grid-template-columns:104px 1fr!important;column-gap:18px!important;row-gap:14px!important;align-items:center!important;padding:20px!important}
+[data-m~="doi"]>div>div:nth-child(1){grid-column:1;grid-row:1;width:104px!important;height:104px!important;border-radius:50%!important}
+[data-m~="doi"]>div>div:nth-child(1)>img{width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:contain!important;object-position:center bottom!important;padding:6px 0 0!important;box-sizing:border-box!important}
+[data-m~="doi"]>div>[data-m="personatitle"]{grid-column:2;grid-row:1;margin-top:0!important;text-align:left!important;white-space:normal!important;font-size:23px!important;letter-spacing:-.035em!important}
+[data-m~="doi"]>div>[data-m="personabody"]{grid-column:1 / -1;grid-row:2;margin-top:0!important;text-align:left!important;font-size:17px!important}
+[data-m~="doi"]>div>a{grid-column:1 / -1;grid-row:3;justify-self:start;margin-top:0!important}
+}
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:clip;background:#f8fafc">
+
+<header style="position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;row-gap:10px;column-gap:clamp(16px,2.4vw,40px);padding:14px clamp(20px,3vw,44px);background:rgba(248,250,252,.85);backdrop-filter:blur(14px);border-bottom:1px solid #e2e8f0">
+  <div style="flex:none;display:flex;align-items:center;gap:10px">
+    <img src="assets/logo-hanpeak.png" alt="Hanpeak" data-m="logo" style="height:36px;width:auto;object-fit:contain;display:block">
+    <div data-m="wordmark" style="font-size:16px;font-weight:800;letter-spacing:-.02em;color:#0f172a;white-space:nowrap">Hanpeak</div>
+  </div>
+  <nav data-m="nav" style="flex:1 1 auto;display:flex;align-items:center;flex-wrap:wrap;gap:10px clamp(18px,2.4vw,40px);justify-content:center">
+    <a href="#van-de" style="font-size:15px;font-weight:500;color:#475569;white-space:nowrap;flex:none;padding:6px 0" style-hover="color:#059669">Vấn đề</a>
+    <a href="#giai-phap" style="font-size:15px;font-weight:500;color:#475569;white-space:nowrap;flex:none;padding:6px 0" style-hover="color:#059669">Giải pháp</a>
+    <a href="#tinh-nang" style="font-size:15px;font-weight:500;color:#475569;white-space:nowrap;flex:none;padding:6px 0" style-hover="color:#059669">Tính năng</a>
+    <a href="#doi-tuong" style="font-size:15px;font-weight:500;color:#475569;white-space:nowrap;flex:none;padding:6px 0" style-hover="color:#059669">Đối tượng</a>
+    <a href="#danh-gia" style="font-size:15px;font-weight:500;color:#475569;white-space:nowrap;flex:none;padding:6px 0" style-hover="color:#059669">Đánh giá</a>
+  </nav>
+  <button data-m="navcta" style="border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;color:#fff;background:#10b981;padding:9px 18px;border-radius:9999px;box-shadow:0 6px 16px -6px rgba(16,185,129,.7);white-space:nowrap;flex:none" style-hover="background:#059669;transform:translateY(-1px)">Bắt đầu ngay</button>
+</header>
+
+<section data-m="hero" style="position:relative;overflow:hidden;padding:84px 48px 148px;background:#bde8d7;text-align:center">
+  <div data-m="herobg" style="position:absolute;inset:0;background-image:url('uploads/backgroundlandingpage2-clean.png');background-size:cover;background-position:center bottom;background-repeat:no-repeat"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,47,35,.78) 0%,rgba(4,47,35,.74) 45%,rgba(4,47,35,.66) 66%,rgba(4,47,35,.3) 85%,rgba(4,47,35,0) 100%)"></div>
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.5) 1px,transparent 1px);background-size:26px 26px;opacity:.3"></div>
+  <canvas data-hp-wave="1" ref="{{ waveRef }}" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none"></canvas>
+  <div data-m="deco" style="position:absolute;left:-40px;bottom:-90px;font-family:'Ma Shan Zheng',cursive;font-size:340px;line-height:.8;color:#ffffff;opacity:.1;user-select:none">汉</div>
+  <div data-m="deco" style="position:absolute;right:-20px;top:-40px;font-family:'Ma Shan Zheng',cursive;font-size:260px;line-height:.8;color:#ffffff;opacity:.12;user-select:none">峰</div>
+  <div style="position:relative;max-width:1300px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:30px">
+    
+    <h1 data-m="h1" style="margin:0;width:100%;max-width:1260px;font-size:68px;line-height:1.1;font-weight:800;letter-spacing:-.035em;color:#ffffff;text-shadow:0 2px 18px rgba(6,58,42,.35);text-wrap-mode:wrap;text-wrap-style:stable">Nền tảng luyện thi HSK 3.0 với lộ trình tích hợp AI</h1><p data-m="lead" style="margin: 0; width: 100%; max-width: 1260px; font-size: 26px; line-height: 1.5; color: #ffffff; text-shadow: 0 2px 14px rgba(6,58,42,.35); letter-spacing: -0.01em; font-family: Be Vietnam Pro; font-style: normal; font-weight: 400; text-wrap-mode: wrap; text-wrap-style: stable">Ứng dụng thuật toán tự động phân tích và phát hiện lỗ hổng kiến thức, giúp bạn học đúng trọng tâm tăng band thần tốc và tối ưu thời gian ôn luyên.</p>
+    <button data-m="cta" style="margin-top:26px;border:none;cursor:pointer;font-family:inherit;font-size:19px;font-weight:700;color:#fff;background:#10b981;padding:20px 52px;border-radius:9999px;box-shadow:0 18px 40px -14px rgba(16,185,129,.9);transition:all .2s ease" style-hover="background:#059669;transform:translateY(-2px);box-shadow:0 24px 48px -14px rgba(16,185,129,1)">Bắt đầu ngay</button>
+  </div>
+</section>
+
+<section id="van-de" data-m="sec" style="position:relative;scroll-margin-top:82px;padding:76px 48px 120px;background:#f1f5f9;color:#475569;border-top:1px solid #e2e8f0">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(#cbd5e1 1px,transparent 1px);background-size:30px 30px;opacity:.55"></div>
+  <div style="position:relative;max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:44px">
+    <h2 data-m="h2" style="margin: 0; max-width: 760px; font-size: 48px; line-height: 1.18; font-weight: 800; letter-spacing: -.03em; color: #0f172a; text-wrap: balance; width: 760px">Tại sao nhiều người học mà vẫn không hiệu quả</h2>
+    <div data-m="g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div data-m="pcard" style="display:flex;flex-direction:column;gap:26px;padding:34px 30px 38px;border:1px solid #e2e8f0;border-radius:20px;background:#ffffff;box-shadow:0 12px 30px -26px rgba(15,23,42,.7)" style-hover="border-color:#10b981;transform:translateY(-3px)">
+        <div style="display:flex;align-items:center;gap:clamp(12px,1.3vw,20px)">
+          <div style="flex:none;width:clamp(48px,4.4vw,68px);height:clamp(48px,4.4vw,68px);border-radius:50%;border:1.5px solid #cbd5e1;display:flex;align-items:center;justify-content:center;font-size:clamp(22px,2.1vw,31px);font-weight:800;letter-spacing:-.02em;color:#0f172a">1</div>
+          <div data-m="pctitle" style="font-size:clamp(18px,1.55vw,23px);font-weight:800;line-height:1.18;letter-spacing:-.03em;color:#0f172a;white-space:nowrap">Lệch môi trường thi</div>
+        </div>
+        <div style="font-size:clamp(15px,1.25vw,17px);line-height:1.6;color:#334155;text-wrap:pretty">Chưa quen giao diện thi máy (CBT) khiến thao tác chậm, mất thời gian khi thi chính thức</div>
+      </div>
+      <div data-m="pcard" style="display:flex;flex-direction:column;gap:26px;padding:34px 30px 38px;border:1px solid #e2e8f0;border-radius:20px;background:#ffffff;box-shadow:0 12px 30px -26px rgba(15,23,42,.7)" style-hover="border-color:#10b981;transform:translateY(-3px)">
+        <div style="display:flex;align-items:center;gap:clamp(12px,1.3vw,20px)">
+          <div style="flex:none;width:clamp(48px,4.4vw,68px);height:clamp(48px,4.4vw,68px);border-radius:50%;border:1.5px solid #cbd5e1;display:flex;align-items:center;justify-content:center;font-size:clamp(22px,2.1vw,31px);font-weight:800;letter-spacing:-.02em;color:#0f172a">2</div>
+          <div data-m="pctitle" style="font-size:clamp(18px,1.55vw,23px);font-weight:800;line-height:1.18;letter-spacing:-.03em;color:#0f172a;white-space:nowrap">Luyện đề mù quáng</div>
+        </div>
+        <div style="font-size:clamp(15px,1.25vw,17px);line-height:1.6;color:#334155;text-wrap:pretty">Ôn tập dàn trải, không biết lỗ hổng ở đâu khiến điểm dậm chân tại chỗ</div>
+      </div>
+      <div data-m="pcard" style="display:flex;flex-direction:column;gap:26px;padding:34px 30px 38px;border:1px solid #e2e8f0;border-radius:20px;background:#ffffff;box-shadow:0 12px 30px -26px rgba(15,23,42,.7)" style-hover="border-color:#10b981;transform:translateY(-3px)">
+        <div style="display:flex;align-items:center;gap:clamp(12px,1.3vw,20px)">
+          <div style="flex:none;width:clamp(48px,4.4vw,68px);height:clamp(48px,4.4vw,68px);border-radius:50%;border:1.5px solid #cbd5e1;display:flex;align-items:center;justify-content:center;font-size:clamp(22px,2.1vw,31px);font-weight:800;letter-spacing:-.02em;color:#0f172a">3</div>
+          <div data-m="pctitle" style="font-size:clamp(18px,1.55vw,23px);font-weight:800;line-height:1.18;letter-spacing:-.03em;color:#0f172a;white-space:nowrap">Ôn sai trọng tâm</div>
+        </div>
+        <div style="font-size:clamp(15px,1.25vw,17px);line-height:1.6;color:#334155;text-wrap:pretty">Dùng tài liệu cũ, không bám sát cấu trúc và yêu cầu của chuẩn HSK 3.0 mới</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="giai-phap" data-m="sec" style="scroll-margin-top:82px;padding:130px 48px;background:#ffffff">
+  <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:64px">
+    <h2 data-m="h2" style="margin:0;max-width:820px;font-size:48px;line-height:1.18;font-weight:800;letter-spacing:-.03em;color:#0f172a;text-wrap:balance">Tại sao Hanpeak có thể giúp bạn</h2>
+    <div data-m="g4" style="position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px">
+      <div data-m="prog" style="position:absolute;top:20.5px;left:22px;width:0;height:3px;border-radius:2px;background:#10b981;z-index:0"></div>
+      <div data-m="step" style="position:relative;min-width:0;display:flex;flex-direction:column;gap:20px">
+        <div data-m="circ" style="width:44px;height:44px;border-radius:9999px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#94a3b8;position:relative;z-index:1">1</div>
+        <div data-m="stxt">
+          <div data-m="sthov" style="display:flex;flex-direction:column;gap:9px;transition:transform 220ms ease-out" style-hover="transform:translateY(-4px)">
+            <div style="font-size:12.5px;font-weight:700;letter-spacing:.14em;color:#10b981">BƯỚC 1</div>
+            <div data-m="steptitle" style="font-size:clamp(17px,1.35vw,20px);font-weight:700;line-height:1.35;color:#0f172a;min-height:52px;text-wrap:balance">Test đầu vào thông minh</div>
+            <div style="font-size:16.5px;line-height:1.7;color:#475569">Thuật toán riêng biệt của Hanpeak giúp đo lường chính xác năng lực thực tế.</div>
+          </div>
+        </div>
+      </div>
+      <div data-m="step" style="position:relative;min-width:0;display:flex;flex-direction:column;gap:20px">
+        <div data-m="circ" style="width:44px;height:44px;border-radius:9999px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#94a3b8;position:relative;z-index:1">2</div>
+        <div data-m="stxt">
+          <div data-m="sthov" style="display:flex;flex-direction:column;gap:9px;transition:transform 220ms ease-out" style-hover="transform:translateY(-4px)">
+            <div style="font-size:12.5px;font-weight:700;letter-spacing:.14em;color:#10b981">BƯỚC 2</div>
+            <div data-m="steptitle" style="font-size:clamp(17px,1.35vw,20px);font-weight:700;line-height:1.35;color:#0f172a;min-height:52px;text-wrap:balance">Quét sạch “lỗ hổng” kiến thức</div>
+            <div style="font-size:16.5px;line-height:1.7;color:#475569">Hệ thống phân tích và chỉ mặt đặt tên từng điểm yếu của bạn một cách chi tiết nhất.</div>
+          </div>
+        </div>
+      </div>
+      <div data-m="step" style="position:relative;min-width:0;display:flex;flex-direction:column;gap:20px">
+        <div data-m="circ" style="width:44px;height:44px;border-radius:9999px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#94a3b8;position:relative;z-index:1">3</div>
+        <div data-m="stxt">
+          <div data-m="sthov" style="display:flex;flex-direction:column;gap:9px;transition:transform 220ms ease-out" style-hover="transform:translateY(-4px)">
+            <div style="font-size:12.5px;font-weight:700;letter-spacing:.14em;color:#10b981">BƯỚC 3</div>
+            <div data-m="steptitle" style="font-size:clamp(17px,1.35vw,20px);font-weight:700;line-height:1.35;color:#0f172a;min-height:52px;text-wrap:balance">Lộ trình cá nhân hóa</div>
+            <div style="font-size:16.5px;line-height:1.7;color:#475569">Học đúng trọng tâm bạn cần, bỏ qua kiến thức dư thừa.</div>
+          </div>
+        </div>
+      </div>
+      <div data-m="step" style="position:relative;min-width:0;display:flex;flex-direction:column;gap:20px">
+        <div data-m="circ" style="width:44px;height:44px;border-radius:9999px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#94a3b8;position:relative;z-index:1">4</div>
+        <div data-m="stxt">
+          <div data-m="sthov" style="display:flex;flex-direction:column;gap:9px;transition:transform 220ms ease-out" style-hover="transform:translateY(-4px)">
+            <div style="font-size:12.5px;font-weight:700;letter-spacing:.14em;color:#10b981">BƯỚC 4</div>
+            <div data-m="steptitle" style="font-size:clamp(17px,1.35vw,20px);font-weight:700;line-height:1.35;color:#0f172a;min-height:52px;text-wrap:balance">Luyện tập thực chiến với AI</div>
+            <div style="font-size:16.5px;line-height:1.7;color:#475569">Môi trường thi mô phỏng 100% CBT, AI chấm chữa ngay lập tức.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tinh-nang" data-m="sec" style="scroll-margin-top:82px;padding:120px 40px;background:#f8fafc;border-top:1px solid #e2e8f0">
+  <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:44px">
+    <h2 data-m="h2" style="margin:0;max-width:900px;text-align:center;font-size:46px;line-height:1.18;font-weight:800;letter-spacing:-.03em;color:#0f172a;text-wrap:balance">Các tính năng hỗ trợ học tập mạnh mẽ đang chờ bạn khám phá</h2>
+
+    <div data-m="tabs" style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:100%;padding:6px;background:#ffffff;border:1px solid #e2e8f0;border-radius:26px;box-shadow:0 4px 14px -8px rgba(15,23,42,.25)">
+      <button onClick="{{ goTab3 }}" style="border:none;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;white-space:nowrap;padding:12px 26px;border-radius:9999px;transition:all .2s ease;background:{{ tab3Bg }};color:{{ tab3Fg }}">Kho đề thi</button>
+      <button onClick="{{ goTab2 }}" style="border:none;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;white-space:nowrap;padding:12px 26px;border-radius:9999px;transition:all .2s ease;background:{{ tab2Bg }};color:{{ tab2Fg }}">Review &amp; test</button>
+      <button onClick="{{ goTab1 }}" style="border:none;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;white-space:nowrap;padding:12px 26px;border-radius:9999px;transition:all .2s ease;background:{{ tab1Bg }};color:{{ tab1Fg }}">Kho từ vựng</button>
+      <button onClick="{{ goTab0 }}" style="border:none;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;white-space:nowrap;padding:12px 26px;border-radius:9999px;transition:all .2s ease;background:{{ tab0Bg }};color:{{ tab0Fg }}">AI chấm Viết &amp; Nói</button>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:22px;width:100%">
+      <button onClick="{{ prev }}" data-m="arrow" style="flex:none;width:52px;height:52px;border-radius:9999px;border:1px solid #cbd5e1;background:#ffffff;color:#0f172a;cursor:pointer;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px -6px rgba(15,23,42,.3)" style-hover="border-color:#10b981;color:#059669">‹</button>
+
+      <div data-m="fcard" style="position:relative;flex:1;min-width:0;border-radius:28px;background:#ffffff;border:1px solid #e2e8f0;box-shadow:0 24px 60px -34px rgba(15,23,42,.45);overflow:hidden">
+        <div data-m="panel" style="padding:52px 56px 56px;display:{{ d0 }};flex-direction:column;align-items:center;gap:34px">
+          <div style="max-width:760px;text-align:center;display:flex;flex-direction:column;gap:8px">
+            <div data-m="soon" style="position:absolute;top:24px;right:26px;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.1em;padding:6px 14px;border-radius:9999px;background:#fffbeb;border:1px solid #fde68a;color:#b45309;white-space:nowrap;z-index:2"><span style="width:7px;height:7px;border-radius:9999px;background:#f59e0b;flex:none"></span>COMING SOON</div>
+            <div data-m="ftitle" style="font-size:30px;font-weight:800;letter-spacing:-.02em;color:#0f172a">AI chấm Viết &amp; Nói</div>
+            <div style="font-size:17px;line-height:1.7;color:#475569">Không cần chờ giáo viên, không cần tự đoán mình sai ở đâu. AI chấm bài Viết/Nói theo chuẩn HSK, chỉ ra lỗi cụ thể và gợi ý nâng cấp câu chữ, từ vựng — giúp bạn cải thiện sau từng lần luyện, không phải sau từng học kỳ.</div>
+          </div>
+          <div style="width:100%;max-width:940px;display:grid;grid-template-columns:1.25fr 1fr;gap:20px" data-m="g2">
+            <div style="border:1px solid #e2e8f0;border-radius:18px;background:#f8fafc;padding:24px;display:flex;flex-direction:column;gap:16px">
+              <div style="font-size:12px;font-weight:700;letter-spacing:.14em;color:#94a3b8">BÀI VIẾT CỦA BẠN</div>
+              <div style="font-size:19px;line-height:2;color:#0f172a">我<span style="background:#fee2e2;border-bottom:2px solid #ef4444;padding:1px 2px">昨天</span>会去图书馆看书，因为<span style="background:#fef3c7;border-bottom:2px solid #f59e0b;padding:1px 2px">那儿的</span>环境很安静。</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                <span style="font-size:12px;font-weight:700;padding:5px 12px;border-radius:9999px;background:#fee2e2;color:#b91c1c">Lỗi thì · 1</span>
+                <span style="font-size:12px;font-weight:700;padding:5px 12px;border-radius:9999px;background:#fef3c7;color:#92400e">Gợi ý nâng cấp · 1</span>
+              </div>
+              <div style="margin-top:4px;padding:16px 18px;border-radius:14px;background:#ecfdf5;border:1px solid #a7f3d0;display:flex;gap:12px">
+                <div style="flex:none;width:28px;height:28px;border-radius:9999px;background:#10b981;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">AI</div>
+                <div style="font-size:14.5px;line-height:1.65;color:#065f46">“昨天” là quá khứ nên bỏ “会”. Thay “那儿的环境” bằng “<span style="font-weight:700">图书馆的氛围</span>” để câu tự nhiên hơn ở band HSK 4.</div>
+              </div>
+            </div>
+            <div style="border:1px solid #e2e8f0;border-radius:18px;background:#ffffff;padding:24px;display:flex;flex-direction:column;gap:18px">
+              <div style="font-size:12px;font-weight:700;letter-spacing:.14em;color:#94a3b8">ĐIỂM THEO TIÊU CHÍ HSK</div>
+              <div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;font-size:14px;font-weight:600;color:#334155"><span>Ngữ pháp</span><span style="color:#059669">78</span></div><div style="height:8px;border-radius:9999px;background:#f1f5f9"><div style="width:78%;height:100%;border-radius:9999px;background:#10b981"></div></div></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;font-size:14px;font-weight:600;color:#334155"><span>Từ vựng</span><span style="color:#059669">85</span></div><div style="height:8px;border-radius:9999px;background:#f1f5f9"><div style="width:85%;height:100%;border-radius:9999px;background:#10b981"></div></div></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;font-size:14px;font-weight:600;color:#334155"><span>Mạch lạc</span><span style="color:#059669">64</span></div><div style="height:8px;border-radius:9999px;background:#f1f5f9"><div style="width:64%;height:100%;border-radius:9999px;background:#34d399"></div></div></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;font-size:14px;font-weight:600;color:#334155"><span>Phát âm · thanh điệu</span><span style="color:#059669">71</span></div><div style="height:8px;border-radius:9999px;background:#f1f5f9"><div style="width:71%;height:100%;border-radius:9999px;background:#34d399"></div></div></div>
+              <div style="margin-top:auto;display:flex;align-items:center;gap:14px;padding-top:14px;border-top:1px dashed #e2e8f0">
+                <div style="display:flex;align-items:end;gap:3px;height:34px">
+                  <div style="width:4px;height:40%;border-radius:2px;background:#a7f3d0"></div><div style="width:4px;height:75%;border-radius:2px;background:#6ee7b7"></div><div style="width:4px;height:100%;border-radius:2px;background:#10b981"></div><div style="width:4px;height:55%;border-radius:2px;background:#6ee7b7"></div><div style="width:4px;height:85%;border-radius:2px;background:#10b981"></div><div style="width:4px;height:35%;border-radius:2px;background:#a7f3d0"></div><div style="width:4px;height:65%;border-radius:2px;background:#6ee7b7"></div>
+                </div>
+                <div style="font-size:13.5px;line-height:1.5;color:#64748b">Bản ghi âm 00:42 — đã phân tích 3 lỗi thanh điệu</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-m="panel" style="padding:52px 56px 56px;display:{{ d1 }};flex-direction:column;align-items:center;gap:34px">
+          <div style="max-width:760px;text-align:center;display:flex;flex-direction:column;gap:8px">
+            <div data-m="ftitle" style="font-size:30px;font-weight:800;letter-spacing:-.02em;color:#0f172a">Kho từ vựng</div>
+            <div style="font-size:17px;line-height:1.7;color:#475569">Tra cứu nhanh, học đúng trọng tâm theo từng band HSK — không lan man, không học lẫn lộn trình độ. Từ vựng được sắp xếp để bạn tra đâu nhớ đó, ôn tới đâu chắc tới đó.</div>
+          </div>
+          <div style="width:100%;max-width:940px;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+              <span style="font-size:13px;font-weight:700;padding:8px 18px;border-radius:9999px;background:#ecfdf5;color:#047857;border:1px solid #a7f3d0">HSK 1</span>
+              <span style="font-size:13px;font-weight:700;padding:8px 18px;border-radius:9999px;background:#ecfdf5;color:#047857;border:1px solid #a7f3d0">HSK 2</span>
+              <span style="font-size:13px;font-weight:700;padding:8px 18px;border-radius:9999px;background:#10b981;color:#ffffff;border:1px solid #10b981">HSK 3</span>
+              <span style="font-size:13px;font-weight:700;padding:8px 18px;border-radius:9999px;background:#ffffff;color:#64748b;border:1px solid #e2e8f0">HSK 4</span>
+              <span style="font-size:13px;font-weight:700;padding:8px 18px;border-radius:9999px;background:#ffffff;color:#64748b;border:1px solid #e2e8f0">HSK 5</span>
+              <span style="font-size:13px;font-weight:700;padding:8px 18px;border-radius:9999px;background:#ffffff;color:#64748b;border:1px solid #e2e8f0">HSK 6</span>
+            </div>
+            <div data-m="gv" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+              <div style="border:1px solid #e2e8f0;border-radius:16px;background:#ffffff;padding:20px;display:flex;flex-direction:column;gap:6px" style-hover="border-color:#10b981;transform:translateY(-2px)"><div style="font-size:30px;font-weight:700;color:#0f172a;line-height:1.2">经验</div><div style="font-size:14px;color:#10b981;font-weight:600">jīng yàn</div><div style="font-size:14.5px;color:#475569">kinh nghiệm</div></div>
+              <div style="border:1px solid #e2e8f0;border-radius:16px;background:#ffffff;padding:20px;display:flex;flex-direction:column;gap:6px" style-hover="border-color:#10b981;transform:translateY(-2px)"><div style="font-size:30px;font-weight:700;color:#0f172a;line-height:1.2">解决</div><div style="font-size:14px;color:#10b981;font-weight:600">jiě jué</div><div style="font-size:14.5px;color:#475569">giải quyết</div></div>
+              <div style="border:1px solid #e2e8f0;border-radius:16px;background:#ffffff;padding:20px;display:flex;flex-direction:column;gap:6px" style-hover="border-color:#10b981;transform:translateY(-2px)"><div style="font-size:30px;font-weight:700;color:#0f172a;line-height:1.2">环境</div><div style="font-size:14px;color:#10b981;font-weight:600">huán jìng</div><div style="font-size:14.5px;color:#475569">môi trường</div></div>
+              <div style="border:1px solid #e2e8f0;border-radius:16px;background:#ffffff;padding:20px;display:flex;flex-direction:column;gap:6px" style-hover="border-color:#10b981;transform:translateY(-2px)"><div style="font-size:30px;font-weight:700;color:#0f172a;line-height:1.2">影响</div><div style="font-size:14px;color:#10b981;font-weight:600">yǐng xiǎng</div><div style="font-size:14.5px;color:#475569">ảnh hưởng</div></div>
+              <div style="border:1px solid #e2e8f0;border-radius:16px;background:#ffffff;padding:20px;display:flex;flex-direction:column;gap:6px" style-hover="border-color:#10b981;transform:translateY(-2px)"><div style="font-size:30px;font-weight:700;color:#0f172a;line-height:1.2">习惯</div><div style="font-size:14px;color:#10b981;font-weight:600">xí guàn</div><div style="font-size:14.5px;color:#475569">thói quen</div></div>
+              <div style="border:1px solid #e2e8f0;border-radius:16px;background:#ffffff;padding:20px;display:flex;flex-direction:column;gap:6px" style-hover="border-color:#10b981;transform:translateY(-2px)"><div style="font-size:30px;font-weight:700;color:#0f172a;line-height:1.2">安排</div><div style="font-size:14px;color:#10b981;font-weight:600">ān pái</div><div style="font-size:14.5px;color:#475569">sắp xếp</div></div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-radius:16px;background:#f8fafc;border:1px solid #e2e8f0">
+              <div style="font-size:14.5px;color:#475569">Đã học&nbsp;<span style="font-weight: 700; color: rgb(4, 120, 87);">612</span> / 973 từ band HSK 3</div>
+              <div data-m="pbar" style="width:280px;height:8px;border-radius:9999px;background:#e2e8f0"><div style="width:63%;height:100%;border-radius:9999px;background:#10b981"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div data-m="panel" style="padding:52px 56px 56px;display:{{ d2 }};flex-direction:column;align-items:center;gap:34px">
+          <div style="max-width:760px;text-align:center;display:flex;flex-direction:column;gap:8px">
+            <div data-m="ftitle" style="font-size:30px;font-weight:800;letter-spacing:-.02em;color:#0f172a">Review &amp; test</div>
+            <div style="font-size:17px;line-height:1.7;color:#475569">Mỗi bài kiểm tra trên Hanpeak không chỉ chấm điểm mà cho bạn thấy chính xác kỹ năng nào đã vững, kỹ năng nào còn hổng, tới từng điểm kiến thức nhỏ nhất.</div>
+          </div>
+          <div style="width:100%;max-width:940px;display:grid;grid-template-columns:1fr 1.15fr;gap:20px" data-m="g2">
+            <div style="border:1px solid #e2e8f0;border-radius:18px;background:#f8fafc;padding:26px;display:flex;flex-direction:column;gap:20px">
+              <div style="font-size:12px;font-weight:700;letter-spacing:.14em;color:#94a3b8">TỔNG QUAN KỸ NĂNG</div>
+              <div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;font-size:14.5px;font-weight:600;color:#334155"><span>Nghe</span><span style="color:#047857">Vững</span></div><div style="height:10px;border-radius:9999px;background:#e2e8f0"><div style="width:88%;height:100%;border-radius:9999px;background:#059669"></div></div></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;font-size:14.5px;font-weight:600;color:#334155"><span>Đọc</span><span style="color:#047857">Vững</span></div><div style="height:10px;border-radius:9999px;background:#e2e8f0"><div style="width:79%;height:100%;border-radius:9999px;background:#10b981"></div></div></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;font-size:14.5px;font-weight:600;color:#334155"><span>Viết</span><span style="color:#b45309">Cần ôn</span></div><div style="height:10px;border-radius:9999px;background:#e2e8f0"><div style="width:46%;height:100%;border-radius:9999px;background:#f59e0b"></div></div></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;font-size:14.5px;font-weight:600;color:#334155"><span>Nói</span><span style="color:#b91c1c">Lỗ hổng</span></div><div style="height:10px;border-radius:9999px;background:#e2e8f0"><div style="width:31%;height:100%;border-radius:9999px;background:#ef4444"></div></div></div>
+            </div>
+            <div style="border:1px solid #e2e8f0;border-radius:18px;background:#ffffff;padding:26px;display:flex;flex-direction:column;gap:14px">
+              <div style="font-size:12px;font-weight:700;letter-spacing:.14em;color:#94a3b8">CHI TIẾT TỚI TỪNG ĐIỂM KIẾN THỨC</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:12px;background:#ecfdf5;border:1px solid #a7f3d0"><span style="font-size:15px;color:#065f46;font-weight:600">Bổ ngữ xu hướng 来/去</span><span style="font-size:13px;font-weight:700;color:#047857">9/10 đúng</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:12px;background:#ecfdf5;border:1px solid #a7f3d0"><span style="font-size:15px;color:#065f46;font-weight:600">Lượng từ thường gặp</span><span style="font-size:13px;font-weight:700;color:#047857">8/8 đúng</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:12px;background:#fffbeb;border:1px solid #fde68a"><span style="font-size:15px;color:#92400e;font-weight:600">Câu chữ 把</span><span style="font-size:13px;font-weight:700;color:#b45309">4/9 đúng</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:12px;background:#fef2f2;border:1px solid #fecaca"><span style="font-size:15px;color:#991b1b;font-weight:600">Câu bị động 被</span><span style="font-size:13px;font-weight:700;color:#b91c1c">2/9 đúng</span></div>
+              <div style="margin-top:auto;font-size:14px;line-height:1.6;color:#64748b">Lộ trình tuần tới đã tự động ưu tiên 2 điểm kiến thức còn hổng.</div>
+            </div>
+          </div>
+        </div>
+
+        <div data-m="panel" style="padding:52px 56px 56px;display:{{ d3 }};flex-direction:column;align-items:center;gap:34px">
+          <div style="max-width:800px;text-align:center;display:flex;flex-direction:column;gap:8px">
+            <div data-m="ftitle" style="font-size:30px;font-weight:800;letter-spacing:-.02em;color:#0f172a">Kho đề thi chuẩn hóa HSK 3.0</div>
+            <div style="font-size:17px;line-height:1.7;color:#475569">Hàng trăm đề luyện đa dạng cấp độ, liên tục cập nhật theo format mới nhất. Mô phỏng trải nghiệm thi máy (CBT) giúp bạn làm quen thao tác, tối ưu thời gian làm bài.</div>
+          </div>
+          <div style="width:100%;max-width:940px;display:grid;grid-template-columns:1fr 1.2fr;gap:20px" data-m="g2">
+            <div style="border:1px solid #e2e8f0;border-radius:18px;background:#f8fafc;padding:26px;display:flex;flex-direction:column;gap:14px">
+              <div style="font-size:12px;font-weight:700;letter-spacing:.14em;color:#94a3b8">KHO ĐỀ THEO CẤP ĐỘ</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:12px;background:#ffffff;border:1px solid #e2e8f0"><span style="font-size:15px;font-weight:600;color:#0f172a">HSK 1 – 2</span><span style="font-size:13px;font-weight:700;color:#047857">64 đề</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:12px;background:#ecfdf5;border:1px solid #a7f3d0"><span style="font-size:15px;font-weight:600;color:#065f46">HSK 3 – 4</span><span style="font-size:13px;font-weight:700;color:#047857">128 đề</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:12px;background:#ffffff;border:1px solid #e2e8f0"><span style="font-size:15px;font-weight:600;color:#0f172a">HSK 5 – 6</span><span style="font-size:13px;font-weight:700;color:#047857">96 đề</span></div>
+              <div style="margin-top:auto;display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px dashed #e2e8f0"><span style="width:8px;height:8px;border-radius:9999px;background:#10b981;flex:none"></span><span style="font-size:13.5px;color:#64748b">Cập nhật format mới nhất · tháng này +12 đề</span></div>
+            </div>
+            <div style="border:1px solid #e2e8f0;border-radius:18px;background:#ffffff;padding:0;display:flex;flex-direction:column;overflow:hidden">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:#0f172a">
+                <div style="font-size:13px;font-weight:700;letter-spacing:.1em;color:#94a3b8">MÔ PHỎNG THI MÁY · CBT</div>
+                <div style="font-size:14px;font-weight:700;color:#34d399">00:18:42</div>
+              </div>
+              <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1">
+                <div style="display:flex;align-items:center;justify-content:space-between"><div style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#94a3b8">阅读 · 第 14 题</div><div style="font-size:13px;color:#64748b">14 / 40</div></div>
+                <div style="font-size:19px;line-height:1.9;color:#0f172a">他每天都很早就起床，然后去公园<span style="background:#ecfdf5;border-bottom:2px solid #10b981;padding:1px 3px">锻炼身体</span>。</div>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;border:1px solid #e2e8f0;background:#f8fafc"><span style="width:26px;height:26px;border-radius:9999px;border:1px solid #cbd5e1;background:#ffffff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#64748b;flex:none">A</span><span style="font-size:15.5px;color:#334155">他喜欢睡懒觉</span></div>
+                  <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;border:1px solid #10b981;background:#ecfdf5"><span style="width:26px;height:26px;border-radius:9999px;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#ffffff;flex:none">B</span><span style="font-size:15.5px;font-weight:600;color:#065f46">他有运动的习惯</span></div>
+                  <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;border:1px solid #e2e8f0;background:#f8fafc"><span style="width:26px;height:26px;border-radius:9999px;border:1px solid #cbd5e1;background:#ffffff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#64748b;flex:none">C</span><span style="font-size:15.5px;color:#334155">他常常去图书馆</span></div>
+                </div>
+                <div style="margin-top:auto;display:flex;align-items:center;gap:12px"><div style="flex:1;height:8px;border-radius:9999px;background:#f1f5f9"><div style="width:35%;height:100%;border-radius:9999px;background:#10b981"></div></div><span style="font-size:13px;font-weight:600;color:#64748b">35%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button onClick="{{ next }}" data-m="arrow" style="flex:none;width:52px;height:52px;border-radius:9999px;border:1px solid #cbd5e1;background:#ffffff;color:#0f172a;cursor:pointer;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px -6px rgba(15,23,42,.3)" style-hover="border-color:#10b981;color:#059669">›</button>
+    </div>
+  </div>
+</section>
+
+<section id="doi-tuong" data-m="sec" style="scroll-margin-top:82px;padding:130px 48px;background:#ffffff">
+  <div style="max-width:1180px;margin:0 auto 48px">
+    <h2 data-m="h2" style="margin:0;max-width:720px;font-size:44px;line-height:1.2;font-weight:800;letter-spacing:-.03em;color:#0f172a;text-wrap:balance">Hanpeak dành cho ai</h2>
+  </div>
+  <div data-m="g3 doi" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 40px;align-items:start">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0;background:#ffffff;border-radius:26px;padding:22px 24px 34px;box-shadow:0 1px 2px rgba(15,23,42,.05),0 18px 40px -22px rgba(15,23,42,.28);transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:translateY(-6px);box-shadow:0 2px 4px rgba(15,23,42,.06),0 30px 60px -26px rgba(15,23,42,.36)">
+      <div style="width:100%;border-radius:22px;background:#f1f5f9;overflow:hidden;display:flex;align-items:flex-end;justify-content:center">
+        <img src="assets/persona-moi-hoc-v5.png" alt="Người mới bắt đầu học ngồi luyện viết" style="width:100%;aspect-ratio:5 / 4;object-fit:contain;object-position:center bottom;display:block">
+      </div>
+      <div data-m="personatitle" style="margin-top:28px;font-size:clamp(17px,1.85vw,24px);font-weight:800;letter-spacing:-.03em;color:#0f172a;line-height:1.2;text-align:center;white-space:nowrap">Người mới bắt đầu học</div>
+      <div data-m="personabody" style="margin-top:16px;font-size:clamp(15px,1.85vw - 2px,22px);line-height:1.65;color:#475569;text-align:center;text-wrap:pretty">Xây nền tảng vững chắc từ con số 0, học đúng lộ trình để không bị bỏ lại phía sau</div>
+      <a href="#" style="margin-top:22px;font-size:17px;font-weight:600;color:#059669;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px" style-hover="color:#047857">Xây dựng nền ngay</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0;background:#ffffff;border-radius:26px;padding:22px 24px 34px;box-shadow:0 1px 2px rgba(15,23,42,.05),0 18px 40px -22px rgba(15,23,42,.28);transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:translateY(-6px);box-shadow:0 2px 4px rgba(15,23,42,.06),0 30px 60px -26px rgba(15,23,42,.36)">
+      <div style="width:100%;border-radius:22px;background:#ecfdf5;overflow:hidden;display:flex;align-items:flex-end;justify-content:center">
+        <img src="assets/persona-tang-band-v5.png" alt="Lộ trình tăng band từ HSK 3 lên HSK 4" style="width:100%;aspect-ratio:5 / 4;object-fit:contain;object-position:center bottom;display:block">
+      </div>
+      <div data-m="personatitle" style="margin-top:28px;font-size:clamp(17px,1.85vw,24px);font-weight:800;letter-spacing:-.03em;color:#0f172a;line-height:1.2;text-align:center;white-space:nowrap">Người muốn tăng band HSK</div>
+      <div data-m="personabody" style="margin-top:16px;font-size:clamp(15px,1.85vw - 2px,22px);line-height:1.65;color:#475569;text-align:center;text-wrap:pretty">Ôn tập trúng lỗ hổng kiến thức, tăng band nhanh hơn mà không cần học lan man</div>
+      <a href="#" style="margin-top:22px;font-size:17px;font-weight:600;color:#059669;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px" style-hover="color:#047857">Tăng band điểm ngay</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0;background:#ffffff;border-radius:26px;padding:22px 24px 34px;box-shadow:0 1px 2px rgba(15,23,42,.05),0 18px 40px -22px rgba(15,23,42,.28);transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:translateY(-6px);box-shadow:0 2px 4px rgba(15,23,42,.06),0 30px 60px -26px rgba(15,23,42,.36)">
+      <div style="width:100%;border-radius:22px;background:#f1f5f9;overflow:hidden;display:flex;align-items:flex-end;justify-content:center">
+        <img src="assets/persona-gan-thi-v5.png" alt="Người học ôn luyện trước ngày thi" style="width:100%;aspect-ratio:5 / 4;object-fit:contain;object-position:center bottom;display:block">
+      </div>
+      <div data-m="personatitle" style="margin-top:28px;font-size:clamp(17px,1.85vw,24px);font-weight:800;letter-spacing:-.03em;color:#0f172a;line-height:1.2;text-align:center;white-space:nowrap">Người gần ngày thi</div>
+      <div data-m="personabody" style="margin-top:16px;font-size:clamp(15px,1.85vw - 2px,22px);line-height:1.65;color:#475569;text-align:center;text-wrap:pretty">Bứt tốc đúng lúc, luyện trúng điểm yếu trong thời gian ngắn trước ngày thi</div>
+      <a href="#" style="margin-top:22px;font-size:17px;font-weight:600;color:#059669;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px" style-hover="color:#047857">Vào phòng thi thử</a>
+    </div>
+  </div>
+</section>
+
+<section id="danh-gia" data-m="sec" style="scroll-margin-top:82px;padding:110px 0;background:#f8fafc;border-top:1px solid #e2e8f0;overflow:hidden">
+  <div data-m="revhead" style="max-width:1180px;margin:0 auto 48px;padding:0 48px">
+    <h2 data-m="h2" style="margin:0;max-width:720px;font-size:44px;line-height:1.2;font-weight:800;letter-spacing:-.03em;color:#0f172a">Người học nói gì về Hanpeak</h2>
+  </div>
+  <div style="position:relative;width:100%">
+    <div data-m="fade" style="position:absolute;left:0;top:0;bottom:0;width:120px;z-index:3;pointer-events:none;background:linear-gradient(90deg,#f8fafc,rgba(248,250,252,0))"></div>
+    <div data-m="fade" style="position:absolute;right:0;top:0;bottom:0;width:120px;z-index:3;pointer-events:none;background:linear-gradient(270deg,#f8fafc,rgba(248,250,252,0))"></div>
+    <div data-m="tviewport" style="position:relative;width:100%">
+    <div data-m="ttrack" style="display:flex;width:max-content;gap:22px;padding:8px 11px;animation:hp-marquee {{ speed }} linear infinite">
+      <div data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Học tiếng Trung chưa bao giờ dễ theo dõi đến vậy!</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Minh Anh</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 3 · 280/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Lộ trình học tự điều chỉnh theo năng lực của mình, không còn cảm giác học lan man như trước nữa.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Thảo Vy</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 4 · 258/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Phần chấm bài Viết và Nói cho phản hồi rất chi tiết, mình biết chính xác lỗi phát âm và ngữ pháp cần sửa. Sau một tháng dùng, kỹ năng nói của mình cải thiện rõ rệt.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Đức Huy</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 5 · 241/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">App thiết kế gọn gàng, dễ dùng.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Ngọc Trâm</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 3 · 272/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Trước đây mình học tiếng Trung qua nhiều nguồn lẻ tẻ nên rất mất phương hướng. Hanpeak giúp mình nắm được điểm mạnh, điểm yếu của từng kỹ năng nghe – nói – đọc – viết, từ đó có lộ trình luyện tập phù hợp.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Quang Khải</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 4 · 265/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Tính năng đánh giá năng lực đầu vào rất chính xác, giúp mình biết ngay nên bắt đầu từ đâu.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Bảo Trân</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 4 · 269/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Là người vừa đi làm vừa tự học thêm tiếng Trung để phục vụ công việc, mình đánh giá cao việc Hanpeak cho phép học linh hoạt mà vẫn bám sát mục tiêu cá nhân. Hệ thống bài tập luyện tập song song với phần kiến thức giúp mình nhớ lâu hơn nhiều so với học chay.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Hoàng Long</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 5 · 236/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Giao diện thân thiện, hỗ trợ nhiệt tình.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Phương Uyên</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 3 · 261/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Mình từng thi trượt HSK vì không biết mình yếu ở đâu. Từ khi dùng Hanpeak, phần báo cáo và thống kê cá nhân hóa cho mình thấy rõ tiến độ theo từng tuần, cộng với ngân hàng câu hỏi luyện tập sát với đề thi thật. Nhờ vậy lần thi gần nhất mình đã đạt điểm cao hơn hẳn.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Trung Kiên</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 4 · 254/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Một nền tảng học tiếng Trung đáng đầu tư thời gian, đặc biệt nếu bạn cần lộ trình học được cá nhân hóa thay vì học tràn lan không định hướng.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Yến Nhi</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 5 · 244/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div aria-hidden="true" data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Học tiếng Trung chưa bao giờ dễ theo dõi đến vậy!</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Minh Anh</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 3 · 280/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div aria-hidden="true" data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Lộ trình học tự điều chỉnh theo năng lực của mình, không còn cảm giác học lan man như trước nữa.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Thảo Vy</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 4 · 258/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div aria-hidden="true" data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Phần chấm bài Viết và Nói cho phản hồi rất chi tiết, mình biết chính xác lỗi phát âm và ngữ pháp cần sửa. Sau một tháng dùng, kỹ năng nói của mình cải thiện rõ rệt.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Đức Huy</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 5 · 241/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div aria-hidden="true" data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">App thiết kế gọn gàng, dễ dùng.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Ngọc Trâm</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 3 · 272/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div aria-hidden="true" data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Trước đây mình học tiếng Trung qua nhiều nguồn lẻ tẻ nên rất mất phương hướng. Hanpeak giúp mình nắm được điểm mạnh, điểm yếu của từng kỹ năng nghe – nói – đọc – viết, từ đó có lộ trình luyện tập phù hợp.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Quang Khải</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 4 · 265/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div aria-hidden="true" data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Tính năng đánh giá năng lực đầu vào rất chính xác, giúp mình biết ngay nên bắt đầu từ đâu.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Bảo Trân</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 4 · 269/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div aria-hidden="true" data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Là người vừa đi làm vừa tự học thêm tiếng Trung để phục vụ công việc, mình đánh giá cao việc Hanpeak cho phép học linh hoạt mà vẫn bám sát mục tiêu cá nhân. Hệ thống bài tập luyện tập song song với phần kiến thức giúp mình nhớ lâu hơn nhiều so với học chay.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Hoàng Long</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 5 · 236/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div aria-hidden="true" data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Giao diện thân thiện, hỗ trợ nhiệt tình.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Phương Uyên</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 3 · 261/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div aria-hidden="true" data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Mình từng thi trượt HSK vì không biết mình yếu ở đâu. Từ khi dùng Hanpeak, phần báo cáo và thống kê cá nhân hóa cho mình thấy rõ tiến độ theo từng tuần, cộng với ngân hàng câu hỏi luyện tập sát với đề thi thật. Nhờ vậy lần thi gần nhất mình đã đạt điểm cao hơn hẳn.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Trung Kiên</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 4 · 254/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+      <div aria-hidden="true" data-m="tcard" style="flex:none;width:330px;height:430px;padding:30px 30px 26px;border-radius:22px;background:#ffffff;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -26px rgba(15,23,42,.6)"><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;color:#a7f3d0">“</div><div style="font-size:16px;line-height:1.7;color:#334155">Một nền tảng học tiếng Trung đáng đầu tư thời gian, đặc biệt nếu bạn cần lộ trình học được cá nhân hóa thay vì học tràn lan không định hướng.</div><div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:2px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;color:#047857">Yến Nhi</div><div style="font-size:12.5px;font-weight:600;color:#64748b">Thi đỗ HSK 5 · 244/300</div></div><div style="font-family:'Ma Shan Zheng',cursive;font-size:102px;line-height:.58;margin-top:-46px;color:#a7f3d0">”</div></div></div>
+    
+    </div>
+    </div>
+  </div>
+</section>
+
+<section data-m="cta2" style="position:relative;overflow:hidden;padding:150px 48px;background:#ecfdf5;text-align:center;border-top:1px solid #a7f3d0">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(#a7f3d0 1px,transparent 1px);background-size:30px 30px;opacity:.7"></div>
+  <div style="position:absolute;bottom:-260px;left:50%;transform:translateX(-50%);width:1100px;height:620px;border-radius:9999px;background:radial-gradient(ellipse at center,rgba(16,185,129,.28),rgba(236,253,245,0) 66%);animation:hp-pulse 7s ease-in-out infinite"></div>
+  
+  <div style="position:relative;max-width:880px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:26px">
+    
+    <h2 data-m="h2big" style="margin:0;font-size:58px;line-height:1.15;font-weight:800;letter-spacing:-.035em;color:#0f172a;text-wrap:balance">Làm bài đánh giá năng lực miễn phí</h2>
+    <p style="margin:0;max-width:640px;font-size:19px;line-height:1.7;color:#475569">Chỉ mất vài phút để biết mình đang ở đâu theo chuẩn HSK 3.0 — và bắt đầu lộ trình đúng ngay từ hôm nay.</p>
+    <button data-m="cta" style="margin-top:10px;border:none;cursor:pointer;font-family:inherit;font-size:19px;font-weight:700;color:#ffffff;background:#10b981;padding:20px 52px;border-radius:9999px;box-shadow:0 18px 44px -14px rgba(16,185,129,.85);transition:all .2s ease" style-hover="background:#059669;transform:translateY(-2px)">Làm bài đánh giá năng lực miễn phí</button>
+    
+  </div>
+</section>
+
+<footer data-m="foot" style="padding:72px clamp(24px,4vw,64px) 40px;background:linear-gradient(160deg,#10b981,#0fb27c 55%,#0d9f72);color:#ffffff">
+  <div style="max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
+
+    <div data-m="fg" style="display:grid;grid-template-columns:1.2fr 1fr 1.3fr;gap:48px">
+
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;align-items:center;gap:12px">
+          
+          <div style="font-size:22px;font-weight:800;letter-spacing:-.02em;color:#ffffff">Hanpeak</div>
+        </div>
+        <div style="font-size:16px;line-height:1.7;color:rgba(255,255,255,.86);max-width:300px">Nền tảng học tập và ôn luyện HSK 3.0 cá nhân hóa theo năng lực của bạn.</div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="font-size:20px;font-weight:800;letter-spacing:-.01em;color:#ffffff">Chính sách</div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <a href="#" style="display:flex;align-items:center;gap:10px;font-size:15.5px;color:rgba(255,255,255,.9);text-decoration:underline;text-underline-offset:3px" style-hover="color:#ffffff">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3z"></path></svg>
+            Privacy Policy
+          </a>
+          <a href="#" style="display:flex;align-items:center;gap:10px;font-size:15.5px;color:rgba(255,255,255,.9);text-decoration:underline;text-underline-offset:3px" style-hover="color:#ffffff">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5 3h9l5 5v13H5z"></path><path d="M8 12h8M8 16h6"></path></svg>
+            Term of Use
+          </a>
+          <a href="#" style="display:flex;align-items:center;gap:10px;font-size:15.5px;color:rgba(255,255,255,.9);text-decoration:underline;text-underline-offset:3px" style-hover="color:#ffffff">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg>
+            Chính sách thanh toán
+          </a>
+          <a href="#" style="display:flex;align-items:center;gap:10px;font-size:15.5px;color:rgba(255,255,255,.9);text-decoration:underline;text-underline-offset:3px" style-hover="color:#ffffff">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.4L12 15l-1.9-4.6L5.5 9l4.6-1.4L12 3z"></path><path d="M18 16.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9.9-2.1z"></path></svg>
+            Chính sách dùng AI
+          </a>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="font-size:20px;font-weight:800;letter-spacing:-.01em;color:#ffffff">Contact us</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <a href="mailto:hello@hanpeak.vn" style="display:flex;align-items:center;gap:12px;font-size:15.5px;color:rgba(255,255,255,.92)" style-hover="color:#ffffff">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M3 6l9 7 9-7"></path></svg>
+            hello@hanpeak.vn
+          </a>
+          <a href="tel:+84901234567" style="display:flex;align-items:center;gap:12px;font-size:15.5px;color:rgba(255,255,255,.92)" style-hover="color:#ffffff">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a16 16 0 01-16-16z"></path></svg>
+            0901 234 567
+          </a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:4px">
+          <a href="#" aria-label="TikTok" style="width:44px;height:44px;border-radius:9999px;background:#ffffff;display:flex;align-items:center;justify-content:center;transition:transform .2s ease" style-hover="transform:translateY(-3px)">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="#0d9f72"><path d="M16.5 2h-3v13.2a2.6 2.6 0 11-2.1-2.55V9.5A5.9 5.9 0 1017 15.4V8.2a6.4 6.4 0 003.5 1.05V6.2A3.6 3.6 0 0116.5 2z"></path></svg>
+          </a>
+          <a href="#" aria-label="Facebook" style="width:44px;height:44px;border-radius:9999px;background:#ffffff;display:flex;align-items:center;justify-content:center;transition:transform .2s ease" style-hover="transform:translateY(-3px)">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="#0d9f72"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.8c0-.9.25-1.5 1.55-1.5H16.6V4.6c-.3-.04-1.3-.13-2.45-.13-2.42 0-4.05 1.48-4.05 4.2v1.83H7.5v3h2.6V21h3.4z"></path></svg>
+          </a>
+          <a href="#" aria-label="Instagram" style="width:44px;height:44px;border-radius:9999px;background:#ffffff;display:flex;align-items:center;justify-content:center;transition:transform .2s ease" style-hover="transform:translateY(-3px)">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#0d9f72" stroke-width="2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="3.8"></circle><circle cx="17.2" cy="6.9" r="1.1" fill="#0d9f72" stroke="none"></circle></svg>
+          </a>
+          <a href="#" aria-label="Threads" style="width:44px;height:44px;border-radius:9999px;background:#ffffff;display:flex;align-items:center;justify-content:center;transition:transform .2s ease" style-hover="transform:translateY(-3px)">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#0d9f72" stroke-width="1.9" stroke-linecap="round"><path d="M16.4 12.6c-.2-3-2-4.3-4.2-4.3-1.7 0-3 .7-3.7 2"></path><path d="M12.2 21c-4.9 0-8-3.3-8-9S7.4 3 12.2 3c4 0 6.7 2 7.6 5"></path><path d="M12.2 21c4.4 0 7.6-2.6 7.6-8"></path><path d="M15.4 14.8c0 2-1.6 3-3.3 3-1.5 0-2.7-.8-2.7-2 0-1.4 1.4-2.2 3.2-2.2 2.6 0 4.2 1 4.6 3.2"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:26px;border-top:1px solid rgba(255,255,255,.28)">
+      <div style="font-size:14px;color:rgba(255,255,255,.85)">© 2026 Hanpeak. All Rights Reserved.</div>
+      
+    </div>
+  </div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;testimonialSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:80,&quot;min&quot;:20,&quot;max&quot;:140,&quot;step&quot;:5,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Bằng chứng xã hội&quot;}}">
+class Component extends DCLogic {
+  state = { tab: 3 };
+  waveRef = React.createRef();
+
+  componentDidMount() { this.startWave(); this.initReveal(); this.initSteps(); this.initMarquee(); this.initSpy(); }
+
+  initSpy(tries) {
+    const n = tries || 0;
+    const links = Array.from(document.querySelectorAll('nav[data-m="nav"] a'));
+    if (!links.length) { if (n < 40) setTimeout(() => this.initSpy(n + 1), 120); return; }
+    if (window.__hpSpy) {
+      window.removeEventListener('scroll', window.__hpSpy);
+      window.removeEventListener('resize', window.__hpSpy);
+    }
+    const map = { '#van-de': 'van-de', '#giai-phap': 'giai-phap', '#tinh-nang': 'tinh-nang', '#doi-tuong': 'doi-tuong', '#danh-gia': 'danh-gia' };
+    const order = ['van-de', 'giai-phap', 'tinh-nang', 'doi-tuong', 'danh-gia'];
+    const update = () => {
+      const mid = window.innerHeight / 2;
+      let active = null;
+      order.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= mid) active = id;
+      });
+      links.forEach((a) => {
+        const id = map[a.getAttribute('href')];
+        const on = !!id && id === active;
+        a.style.color = on ? '#047857' : '#475569';
+        a.style.fontWeight = on ? '700' : '500';
+      });
+    };
+    update();
+    window.__hpSpy = update;
+    links.forEach((a) => { if (!a.dataset.spyHover) { a.dataset.spyHover = '1'; a.addEventListener('mouseleave', () => setTimeout(() => window.__hpSpy && window.__hpSpy(), 0)); } });
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+  }
+
+  initMarquee(tries) {
+    const n = tries || 0;
+    const vp = document.querySelector('[data-m="tviewport"]');
+    const track = vp && vp.querySelector('[data-m="ttrack"]');
+    if (!vp || !track) { if (n < 40) setTimeout(() => this.initMarquee(n + 1), 120); return; }
+    if (vp.dataset.dragBound) return;
+    vp.dataset.dragBound = '1';
+    const touch = window.matchMedia('(max-width: 980px), (pointer: coarse)').matches;
+    if (!touch) return;
+    track.style.animation = 'none';
+    vp.style.overflowX = 'auto';
+    vp.style.scrollbarWidth = 'none';
+    vp.style.webkitOverflowScrolling = 'touch';
+    vp.style.cursor = 'grab';
+    let paused = false, resume = null, last = 0;
+    const half = () => track.scrollWidth / 2;
+    const pause = (ms) => {
+      paused = true;
+      clearTimeout(resume);
+      resume = setTimeout(() => { paused = false; }, ms || 2200);
+    };
+    ['pointerdown', 'touchstart', 'wheel'].forEach(e => vp.addEventListener(e, () => pause(), { passive: true }));
+    ['pointerup', 'touchend', 'pointercancel'].forEach(e => vp.addEventListener(e, () => pause(500), { passive: true }));
+    // drag with mouse
+    let dragging = false, startX = 0, startScroll = 0;
+    vp.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'touch') return;
+      dragging = true; startX = e.clientX; startScroll = vp.scrollLeft; vp.style.cursor = 'grabbing';
+    });
+    window.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      vp.scrollLeft = startScroll - (e.clientX - startX);
+      pause();
+    });
+    window.addEventListener('pointerup', () => { if (dragging) { dragging = false; vp.style.cursor = 'grab'; pause(500); } });
+    const speed = 42; // px per second
+    const tick = (t) => {
+      const dt = last ? Math.min((t - last) / 1000, 0.05) : 0;
+      last = t;
+      if (!paused && !dragging) vp.scrollLeft += speed * dt;
+      const h = half();
+      if (h > 0) {
+        if (vp.scrollLeft >= h) vp.scrollLeft -= h;
+        else if (vp.scrollLeft < 0) vp.scrollLeft += h;
+      }
+      this._marqueeRaf = requestAnimationFrame(tick);
+    };
+    this._marqueeRaf = requestAnimationFrame(tick);
+  }
+
+  initSteps(tries) {
+    const n = tries || 0;
+    const grid = document.querySelector('[data-m="g4"]');
+    if (!grid) { if (n < 40) setTimeout(() => this.initSteps(n + 1), 100); return; }
+    if (grid.dataset.stepBound) return;
+    grid.dataset.stepBound = '1';
+
+    const DUR = 750;
+    const line = grid.querySelector('[data-m="prog"]');
+    const steps = Array.from(grid.querySelectorAll('[data-m~="step"]'));
+    const circs = steps.map((s) => s.querySelector('[data-m="circ"]'));
+    const txts = steps.map((s) => s.querySelector('[data-m="stxt"]'));
+    const finals = [['#ecfdf5', '#047857'], ['#ecfdf5', '#047857'], ['#ecfdf5', '#047857'], ['#10b981', '#ffffff']];
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.stepTimers = [];
+
+    const paint = (i) => {
+      circs[i].style.background = finals[i][0];
+      circs[i].style.color = finals[i][1];
+    };
+    const lineTarget = () => {
+      if (window.innerWidth <= 640 || !circs[0] || !circs[3]) return 0;
+      const a = circs[0].getBoundingClientRect(), b = circs[3].getBoundingClientRect();
+      return Math.max(0, (b.left + b.width / 2) - (a.left + a.width / 2));
+    };
+    const arm = () => {
+      circs.forEach((c) => {
+        c.style.transition = 'none';
+        c.style.opacity = '0';
+        c.style.transform = 'scale(.5)';
+        c.style.background = '#f1f5f9';
+        c.style.color = '#94a3b8';
+      });
+      txts.forEach((t) => {
+        t.style.transition = 'none';
+        t.style.opacity = '0';
+        t.style.transform = 'translateY(14px)';
+      });
+      line.style.transition = 'none';
+      line.style.width = '0px';
+    };
+    const play = () => {
+      this.stepTimers.forEach(clearTimeout);
+      this.stepTimers = [];
+      if (reduce) {
+        line.style.transition = 'none';
+        line.style.width = lineTarget() + 'px';
+        circs.forEach((c, i) => { c.style.transition = 'none'; c.style.opacity = '1'; c.style.transform = 'none'; paint(i); });
+        txts.forEach((t) => { t.style.transition = 'none'; t.style.opacity = '1'; t.style.transform = 'none'; });
+        return;
+      }
+      arm();
+      const target = lineTarget();
+      void grid.offsetWidth;
+      requestAnimationFrame(() => {
+        line.style.transition = 'width ' + DUR + 'ms linear';
+        line.style.width = target + 'px';
+      });
+      steps.forEach((_, i) => {
+        const at = Math.round((DUR * i) / 3);
+        this.stepTimers.push(setTimeout(() => {
+          circs[i].style.transition = 'opacity 150ms ease-out, transform 190ms cubic-bezier(.34,1.4,.64,1), background 130ms ease-out, color 130ms ease-out';
+          circs[i].style.opacity = '1';
+          circs[i].style.transform = 'scale(1)';
+        }, at));
+        this.stepTimers.push(setTimeout(() => paint(i), at + 110));
+        this.stepTimers.push(setTimeout(() => {
+          txts[i].style.transition = 'opacity 210ms ease-out, transform 210ms cubic-bezier(.22,.61,.36,1)';
+          txts[i].style.opacity = '1';
+          txts[i].style.transform = 'translateY(0)';
+        }, at + 100));
+      });
+    };
+
+    if (!reduce) arm();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { io.disconnect(); play(); } });
+    }, { threshold: 0.25 });
+    io.observe(grid);
+    this.stepIO = io;
+
+  }
+
+  initReveal(tries) {
+    const n = tries || 0;
+    const sec = document.getElementById('van-de');
+    if (!sec) { if (n < 40) setTimeout(() => this.initReveal(n + 1), 100); return; }
+    if (sec.dataset.revealBound) return;
+    sec.dataset.revealBound = '1';
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const head = sec.querySelector('[data-m="h2"]');
+    const cards = Array.from(sec.querySelectorAll('[data-m="pcard"]'));
+    const items = [];
+    if (head) items.push({ el: head, from: 'translateY(-16px)', delay: 0 });
+    cards.forEach((c, i) => items.push({ el: c, from: 'translateY(22px)', delay: 260 + i * 135 }));
+    if (reduce) return;
+    items.forEach(({ el, from }) => {
+      el.style.opacity = '0';
+      el.style.transform = from;
+      el.style.willChange = 'opacity, transform';
+    });
+    const play = () => items.forEach(({ el, delay }) => {
+      setTimeout(() => {
+        el.style.transition = 'opacity 480ms cubic-bezier(.22,.61,.36,1), transform 480ms cubic-bezier(.22,.61,.36,1)';
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        setTimeout(() => { el.style.willChange = ''; }, 700);
+      }, delay);
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { io.disconnect(); play(); } });
+    }, { threshold: 0.25 });
+    io.observe(sec);
+    this.revealIO = io;
+  }
+
+  componentWillUnmount() {
+    if (this.revealIO) this.revealIO.disconnect();
+    if (this.stepIO) this.stepIO.disconnect();
+    if (this.stepTimers) this.stepTimers.forEach(clearTimeout);
+  }
+
+  startWave(tries) {
+    const cv = (this.waveRef && this.waveRef.current) || document.querySelector('canvas[data-hp-wave]');
+    if (!cv) {
+      if ((tries || 0) > 60) { console.warn('hp-wave: canvas never mounted'); return; }
+      this._retry = requestAnimationFrame(() => this.startWave((tries || 0) + 1));
+      return;
+    }
+    const ctx = cv.getContext('2d');
+    let w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const resize = () => {
+      const r = cv.getBoundingClientRect();
+      w = r.width; h = r.height;
+      cv.width = w * dpr; cv.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    resize();
+    this._onResize = resize;
+    window.addEventListener('resize', resize);
+
+    const COLS = 86, ROWS = 44, SIZE = 4.2;
+    const SPEED = 2.2;
+    const K = 1.7;                                  // spatial freq — one crest on screen
+    const DUR = (2.6 * K + Math.PI * 2) / SPEED;    // one full diagonal sweep (incl. warp slack)
+    let t0 = 0;
+
+    const frame = (now) => {
+      if (!t0) t0 = now;
+      const t = (now - t0) / 1000;
+      if (t > DUR) { ctx.clearRect(0, 0, w, h); this._raf = null; this._playing = false; return; }
+      const fade = t > DUR - 0.9 ? Math.max(0, (DUR - t) / 0.9) : 1;
+      ctx.clearRect(0, 0, w, h);
+      // isometric field spanning the hero, travelling top-left -> bottom-right
+      const stepX = (w * 1.35) / COLS, stepY = (h * 1.5) / ROWS;
+      const ox = -w * 0.16, oy = -h * 0.3;
+      for (let r = 0; r < ROWS; r++) {
+        for (let c = 0; c < COLS; c++) {
+          const u = c / COLS, v = r / ROWS;
+          // warp the diagonal coordinate so the crest edge is ragged, not a clean rhombus
+          const warp =
+            0.26 * Math.sin(u * 5.1 - v * 3.7 + t * 0.55) +
+            0.17 * Math.sin(v * 8.3 + u * 2.2 - t * 0.9) +
+            0.10 * Math.sin((u + v) * 13.0 - t * 1.7);
+          const d = u + v + warp;
+          const wave = Math.sin(d * K - t * SPEED);         // single travelling crest
+          const grain = 0.72 + 0.28 * Math.sin(u * 21.0 + v * 17.0);
+          const band = Math.max(0, wave) * grain;          // ridge only, unevenly lit
+          const lift = band * band * 62 + band * 14 * Math.sin(v * 9.4 - t * 1.3);
+          const x = ox + c * stepX * 0.5 + r * stepY * 0.42;
+          const y = oy + r * stepY * 0.55 + c * stepX * 0.2 - lift;
+          if (x < -20 || x > w + 20 || y < -20 || y > h + 20) continue;
+          const near = 0.35 + band * 0.65;
+          const s = SIZE * (0.55 + near * 0.85);
+          const a = (0.05 + band * band * 0.46) * fade;
+          ctx.fillStyle = band > 0.8
+            ? 'rgba(4,120,87,' + a.toFixed(3) + ')'
+            : 'rgba(16,185,129,' + a.toFixed(3) + ')';
+          ctx.fillRect(x - s / 2, y - s / 2, s, s);
+        }
+      }
+      this._raf = requestAnimationFrame(frame);
+    };
+
+    const play = () => {
+      if (this._playing) return;
+      this._playing = true;
+      t0 = 0;
+      this._raf = requestAnimationFrame(frame);
+    };
+    play();
+
+    // replay one sweep each time the hero comes back into view after leaving
+    const hero = cv.parentElement;
+    let away = false;
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.intersectionRatio > 0.55) { if (away) { away = false; play(); } }
+        else if (e.intersectionRatio < 0.05) { away = true; }
+      });
+    }, { threshold: [0, 0.05, 0.55, 1] });
+    this._io.observe(hero);
+  }
+
+  componentWillUnmount() {
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._retry) cancelAnimationFrame(this._retry);
+    if (this._io) this._io.disconnect();
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+  }
+  order = [3, 2, 1, 0];
+  set(i) { this.setState({ tab: (i + 4) % 4 }); }
+  step(d) {
+    const pos = this.order.indexOf(this.state.tab);
+    this.setState({ tab: this.order[(pos + d + 4) % 4] });
+  }
+  renderVals() {
+    const t = this.state.tab;
+    const on = (i) => ({ bg: i === t ? '#10b981' : 'transparent', fg: i === t ? '#ffffff' : '#475569' });
+    const a = on(0), b = on(1), c = on(2), e = on(3);
+    return {
+      d0: t === 0 ? 'flex' : 'none',
+      d1: t === 1 ? 'flex' : 'none',
+      d2: t === 2 ? 'flex' : 'none',
+      d3: t === 3 ? 'flex' : 'none',
+      tab0Bg: a.bg, tab0Fg: a.fg,
+      tab1Bg: b.bg, tab1Fg: b.fg,
+      tab2Bg: c.bg, tab2Fg: c.fg,
+      tab3Bg: e.bg, tab3Fg: e.fg,
+      waveRef: this.waveRef,
+      goTab0: () => this.set(0),
+      goTab1: () => this.set(1),
+      goTab2: () => this.set(2),
+      goTab3: () => this.set(3),
+      prev: () => this.step(-1),
+      next: () => this.step(1),
+      speed: (this.props.testimonialSpeed ?? 80) + 's'
+    };
+  }
+}
+</script>
+</body>
+</html>
