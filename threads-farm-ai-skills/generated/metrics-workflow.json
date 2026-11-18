@@ -1,0 +1,136 @@
+{
+  "name": "P4 - Apify Daily Metrics Collection",
+  "nodes": [
+    {
+      "id": "6ed35aed-e73f-52f3-8c78-b28efa3e5f9e",
+      "name": "Lập lịch tự động",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        190
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 23 * * *"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bca2fa44-4da0-5bb9-acc4-b9e2720d4a42",
+      "name": "Webhook kích hoạt",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        200,
+        390
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "threads-farm-metrics",
+        "responseMode": "onReceived",
+        "options": {}
+      }
+    },
+    {
+      "id": "80d3c689-91a2-567f-b761-96202ba4daf8",
+      "name": "Thu thập số liệu bài đăng",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        530,
+        290
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://REPLACE_WITH_YOUR_GATEWAY_HOST/v1/metrics/collect",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\"source\":\"n8n\",\"phase\":\"metrics\",\"run_at\":$now.toISO(),\"batch_size\":5,\"accounts_count\":8,\"posts_per_account_per_day\":3,\"enforce_approval\":true,\"only_published\":true}) }}",
+        "options": {
+          "timeout": 120000
+        }
+      }
+    },
+    {
+      "id": "8259435b-fbef-54a1-a134-9965e670c78c",
+      "name": "Báo cáo số liệu",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        850,
+        290
+      ],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const p = $input.first().json || {};\nconst ok = Number(p.successful ?? 0);\nconst other = Number(p.failed ?? 0);\nconst message = `[Threads Farm / METRICS] run=${p.run_id ?? 'unknown'}; successful=${ok}; failed=${other}; sheet=${p.sheet_url ?? p.review_sheet_url ?? '(not configured)'}`;\nreturn [{json: {phase: 'metrics', message, run_id: p.run_id ?? null, status: 'REPORT_READY', telegram_setup_required: true, source_response: p}}];"
+      }
+    },
+    {
+      "id": "73f0d073-bb6c-559d-a31b-b901c463525b",
+      "name": "Cấu hình Telegram trước activation",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        810,
+        70
+      ],
+      "parameters": {
+        "content": "⚠️ DRAFT SCAFFOLD. Configure Telegram bot/chat via Credentials and add a Telegram Send Message node after Report. Authenticate HTTP gateway/webhook, verify approval + idempotency, test before activation.",
+        "height": 140,
+        "width": 450
+      }
+    }
+  ],
+  "connections": {
+    "Lập lịch tự động": {
+      "main": [
+        [
+          {
+            "node": "Thu thập số liệu bài đăng",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook kích hoạt": {
+      "main": [
+        [
+          {
+            "node": "Thu thập số liệu bài đăng",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Thu thập số liệu bài đăng": {
+      "main": [
+        [
+          {
+            "node": "Báo cáo số liệu",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Ho_Chi_Minh"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": [],
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "threadsFarmPhase": "metrics"
+  }
+}

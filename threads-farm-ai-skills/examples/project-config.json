@@ -1,0 +1,49 @@
+{
+  "project": "Threads Hanpeak / CIT Farm",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "accounts_count": 8,
+  "posts_per_account_per_day": 3,
+  "batch_size": 5,
+  "draft_cron": "0 7,11,19 * * *",
+  "publish_cron": "0 8,12,20 * * *",
+  "metrics_cron": "0 23 * * *",
+  "webhook_paths": {
+    "draft": "threads-farm-draft",
+    "publish": "threads-farm-publish",
+    "metrics": "threads-farm-metrics"
+  },
+  "adapter_base_url": "https://REPLACE_WITH_YOUR_GATEWAY_HOST",
+  "telegram_chat_id": "REPLACE_WITH_CHAT_ID",
+  "personas": {
+    "source": "CONFIGURE_REAL_8_PERSONAS_IN_SECURE_STORAGE",
+    "count": 8
+  },
+  "sheets": {
+    "spreadsheet_id": "REPLACE_WITH_SHEET_ID",
+    "tabs": [
+      "Posts",
+      "Metrics",
+      "Accounts",
+      "Audit"
+    ]
+  },
+  "farm": {
+    "batch_size": 5,
+    "device_mapping": "REPLACE_WITH_REAL_DEVICE_MAPPING"
+  },
+  "apify": {
+    "actor_id": "REPLACE_WITH_ACTOR_ID"
+  },
+  "approval": {
+    "mandatory": true,
+    "allowed_states": [
+      "CHO_DUYET",
+      "DA_DUYET",
+      "TU_CHOI",
+      "DANG_DAT_CHO",
+      "DANG_DANG",
+      "DA_DANG",
+      "THAT_BAI"
+    ]
+  }
+}

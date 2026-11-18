@@ -1,0 +1,136 @@
+{
+  "name": "P3 - Approved Posts via Android Farm",
+  "nodes": [
+    {
+      "id": "6ed35aed-e73f-52f3-8c78-b28efa3e5f9e",
+      "name": "Lập lịch tự động",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        190
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8,12,20 * * *"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bca2fa44-4da0-5bb9-acc4-b9e2720d4a42",
+      "name": "Webhook kích hoạt",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        200,
+        390
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "threads-farm-publish",
+        "responseMode": "onReceived",
+        "options": {}
+      }
+    },
+    {
+      "id": "2a893008-6281-5a7a-bdc3-e33b46cc8675",
+      "name": "Đăng bài đã duyệt qua Farm",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        530,
+        290
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://REPLACE_WITH_YOUR_GATEWAY_HOST/v1/posts/publish-approved",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\"source\":\"n8n\",\"phase\":\"publish\",\"run_at\":$now.toISO(),\"batch_size\":5,\"accounts_count\":8,\"posts_per_account_per_day\":3,\"enforce_approval\":true,\"only_published\":true}) }}",
+        "options": {
+          "timeout": 120000
+        }
+      }
+    },
+    {
+      "id": "ff13d095-0d57-56ef-b32e-04dcf70604fc",
+      "name": "Báo cáo đăng bài",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        850,
+        290
+      ],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const p = $input.first().json || {};\nconst ok = Number(p.published ?? 0);\nconst other = Number(p.failed ?? 0);\nconst message = `[Threads Farm / PUBLISH] run=${p.run_id ?? 'unknown'}; published=${ok}; failed=${other}; sheet=${p.sheet_url ?? p.review_sheet_url ?? '(not configured)'}`;\nreturn [{json: {phase: 'publish', message, run_id: p.run_id ?? null, status: 'REPORT_READY', telegram_setup_required: true, source_response: p}}];"
+      }
+    },
+    {
+      "id": "73f0d073-bb6c-559d-a31b-b901c463525b",
+      "name": "Cấu hình Telegram trước activation",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        810,
+        70
+      ],
+      "parameters": {
+        "content": "⚠️ DRAFT SCAFFOLD. Configure Telegram bot/chat via Credentials and add a Telegram Send Message node after Report. Authenticate HTTP gateway/webhook, verify approval + idempotency, test before activation.",
+        "height": 140,
+        "width": 450
+      }
+    }
+  ],
+  "connections": {
+    "Lập lịch tự động": {
+      "main": [
+        [
+          {
+            "node": "Đăng bài đã duyệt qua Farm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook kích hoạt": {
+      "main": [
+        [
+          {
+            "node": "Đăng bài đã duyệt qua Farm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Đăng bài đã duyệt qua Farm": {
+      "main": [
+        [
+          {
+            "node": "Báo cáo đăng bài",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Ho_Chi_Minh"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": [],
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "threadsFarmPhase": "publish"
+  }
+}
